@@ -8,7 +8,9 @@ EE.enabled = true
 
 if defined?(Bacon)
 
-  EE.intercept(Bacon::Error).skip_until { |frame| frame.klass == Bacon::Context }
+  EE.intercept do |frame, ex|
+    ex.is_a?(Bacon::Error) && frame.method_name != :run_requirement
+  end.skip_until { |frame| frame.klass == Bacon::Context }
 
 elsif defined?(RSpec)
 

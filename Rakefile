@@ -36,6 +36,9 @@ task :test do
   sh "bacon -Itest -rubygems test.rb -q"
 end
 
+desc "generate gemspec"
+task :gemspec => "ruby:gemspec"
+
 namespace :ruby do
   spec = Gem::Specification.new do |s|
     apply_spec_defaults(s)
@@ -45,6 +48,13 @@ namespace :ruby do
   Rake::GemPackageTask.new(spec) do |pkg|
     pkg.need_zip = false
     pkg.need_tar = false
+  end
+
+  desc  "Generate gemspec file"
+  task :gemspec do
+    File.open("#{spec.name}.gemspec", "w") do |f|
+      f << spec.to_ruby
+    end
   end
 end
 
