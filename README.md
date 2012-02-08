@@ -47,6 +47,9 @@ end
 And here is the result of running the above test with the `rspec` executable:
 
 ```ruby
+Test failure: expected: true
+     got: false (using ==)
+
 Frame number: 0/14
 Frame type: block
 
