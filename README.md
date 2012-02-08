@@ -5,7 +5,7 @@ plymouth
 
 _Start an interactive session on test failure_
 
-**Warning BETA software: Please file an [issue](https://github.com/banister/plymouth) if you have any problems**
+**Warning BETA software: Please file an [issue](https://github.com/banister/plymouth/issues) if you have any problems**
 
 `plymouth` is a gem to automatically start a [Pry](http://pry.github.com) session when a test fails, putting you in the context of the failure.
 It currently supports [Bacon](https://github.com/chneukirchen/bacon), [Minitest](https://github.com/seattlerb/minitest), and [RSpec](https://github.com/rspec/rspec). 
@@ -97,7 +97,7 @@ If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
 Limitations
 -------------------------
 
-* Occasional (very rare) segfault on 1.9.3 (seems to work fine on 1.9.2). Please [report](https://github.com/banister/plymouth) all segfaults with a full backtrace!
+* Occasional (very rare) segfault on 1.9.3 (seems to work fine on 1.9.2). Please [report](https://github.com/banister/plymouth/issues) all segfaults with a full backtrace!
 * Only supports MRI.
 * Currently limited to just Bacon, RSpec and Minitest. Support for more testing libraries will be added in the future.
 
