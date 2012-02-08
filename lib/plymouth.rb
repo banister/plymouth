@@ -23,6 +23,7 @@ if defined?(Bacon)
     else
       false
     end
+
   end.skip_until { |frame| frame.klass == Bacon::Context }
 
 elsif defined?(RSpec)
