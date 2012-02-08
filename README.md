@@ -5,13 +5,13 @@ plymouth
 
 _Start an interactive session when a test fails_
 
-**Please note, this is a first release (BETA) for plymouth and as such it may still have teething problems. If you encounter any quirks or crashes please file an [issue](https://github.com/banister/plymouth)**
+**Warning BETA software: Please file an [issue](https://github.com/banister/plymouth) if you have any problems**
 
 `plymouth` is a gem to automatically start a [Pry](http://pry.github.com) session when a test fails, putting you in the context of the failure.
 It currently supports [Bacon](https://github.com/chneukirchen/bacon), [Minitest](https://github.com/seattlerb/minitest), and [RSpec](https://github.com/rspec/rspec). 
 Support for other testing libraries is (usually) trivial to add.
 
-**plymouth currently only supports MRI 1.9.2+ (including 1.9.3)**
+plymouth currently only supports **MRI 1.9.2+ (including 1.9.3)**
 
 * Install the [gem](https://rubygems.org/gems/plymouth): `gem install plymouth`
 * See the [source code](http://github.com/banister/plymouth)
@@ -22,7 +22,7 @@ Simply add the following line to your test files:
 
 `require 'plymouth'` 
 
-`plymouth` should auto-detect which testing library you're using, and 'just work' :)
+plymouth should auto-detect which testing library you're using, and 'just work' :)
 
 
 Example: Intercept a failing test in RSpec
