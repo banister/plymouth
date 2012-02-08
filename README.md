@@ -20,7 +20,7 @@ plymouth currently only runs on **MRI 1.9.2+ (including 1.9.3)**
  
 **How to use:**
 
-Simply add the following line to your test suite:
+After installing the gem, simply add the following line to your test suite:
 
 `require 'plymouth'` 
 
