@@ -3,22 +3,24 @@ plymouth
 
 (C) John Mair (banisterfiend) 2012
 
-_Start an interactive session when a test fails_
+_Start an interactive session on test failure_
 
 **Warning BETA software: Please file an [issue](https://github.com/banister/plymouth) if you have any problems**
 
 `plymouth` is a gem to automatically start a [Pry](http://pry.github.com) session when a test fails, putting you in the context of the failure.
 It currently supports [Bacon](https://github.com/chneukirchen/bacon), [Minitest](https://github.com/seattlerb/minitest), and [RSpec](https://github.com/rspec/rspec). 
-Support for other testing libraries is (usually) trivial to add.
+Support for other testing libraries is (usually) trivial to add.  
 
-plymouth currently only supports **MRI 1.9.2+ (including 1.9.3)**
+`plymouth` utilizes the powerful [pry-exception_explorer](https://github.com/pry/pry-exception_explorer) gem.
+
+plymouth currently only runs on **MRI 1.9.2+ (including 1.9.3)**
 
 * Install the [gem](https://rubygems.org/gems/plymouth): `gem install plymouth`
 * See the [source code](http://github.com/banister/plymouth)
  
 **How to use:**
 
-Simply add the following line to your test files:
+Simply add the following line to your test suite:
 
 `require 'plymouth'` 
 
