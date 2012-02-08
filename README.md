@@ -87,6 +87,13 @@ Failed examples:
 rspec ./rspec_intercept.rb:8 # Array should be empty
 ```
 
+The 'USE_PLYMOUTH' Environment variable
+-------
+
+To make it easier to run your test suite normally (without plymouth's intervention) a `USE_PLYMOUTH` environment variable
+can be defined. If the `USE_PLYMOUTH` environment variable is set to `"false"`, `"0"`, or `"no"` plymouth will not intercept test failures.
+If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
+
 Limitations
 -------------------------
 
