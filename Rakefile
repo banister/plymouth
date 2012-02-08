@@ -1,5 +1,8 @@
 $:.unshift 'lib'
 
+dlext = Config::CONFIG['DLEXT']
+direc = File.dirname(__FILE__)
+
 PROJECT_NAME = "plymouth"
 
 require "#{PROJECT_NAME}/version"
@@ -16,17 +19,19 @@ CLEAN.include("ext/**/*.log", "ext/**/*.o",
 
 def apply_spec_defaults(s)
   s.name = PROJECT_NAME
-  s.summary = "FIX ME"
+  s.summary = "Start an interactive session when a test fails"
   s.version = CLASS_NAME::VERSION
   s.date = Time.now.strftime '%Y-%m-%d'
   s.author = "John Mair (banisterfiend)"
   s.email = 'jrmair@gmail.com'
   s.description = s.summary
   s.require_path = 'lib'
-  s.add_development_dependency("bacon","~>1.1.0")
   s.homepage = "http://github.com/banister/#{PROJECT_NAME}"
   s.has_rdoc = 'yard'
   s.add_dependency('pry-exception_explorer')
+  s.add_development_dependency("bacon","~>1.1.0")
+  s.add_development_dependency('rspec')
+  s.required_ruby_version = '>= 1.9.2'
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- test/*`.split("\n")
 end
@@ -34,6 +39,21 @@ end
 desc "Run tests"
 task :test do
   sh "bacon -Itest -rubygems test.rb -q"
+end
+
+desc "Run bacon example"
+task :example_bacon do
+  sh "bacon -I#{direc}/lib/ #{direc}/examples/example_bacon.rb "
+end
+
+desc "Run rspec example"
+task :example_rspec do
+  sh "rspec -I#{direc}/lib/ #{direc}/examples/example_rspec.rb "
+end
+
+desc "Run minitest example"
+task :example_minitest do
+  sh "ruby -I#{direc}/lib/ #{direc}/examples/example_minitest.rb "
 end
 
 desc "generate gemspec"
