@@ -3,7 +3,7 @@ plymouth
 
 (C) John Mair (banisterfiend) 2012
 
-_Start an interactive session on test failure_
+_Start Pry in the context of a failed test_
 
 **Warning BETA software: Please file an [issue](https://github.com/banister/plymouth/issues) if you have any problems**
 
