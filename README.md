@@ -97,7 +97,7 @@ If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
 Limitations
 -------------------------
 
-* Occasional segfault on 1.9.3 (seems to work fine on 1.9.2). Please [report](https://github.com/banister/plymouth) all segfaults with a full backtrace!
+* Occasional (very rare) segfault on 1.9.3 (seems to work fine on 1.9.2). Please [report](https://github.com/banister/plymouth) all segfaults with a full backtrace!
 * Only supports MRI.
 * Currently limited to just Bacon, RSpec and Minitest. Support for more testing libraries will be added in the future.
 
