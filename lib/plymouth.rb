@@ -4,7 +4,13 @@
 require "plymouth/version"
 require 'pry-exception_explorer'
 
-EE.enabled = true
+if !ENV.has_key?("USE_PLYMOUTH")
+  EE.enabled = true
+elsif ["0", "false", "no"].include?(ENV["USE_PLYMOUTH"].downcase)
+  EE.enabled = false
+else
+  EE.enabled = true
+end
 
 message = nil
 
