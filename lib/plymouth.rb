@@ -12,8 +12,14 @@ else
   EE.enabled = true
 end
 
+
 message = nil
 
+# Ensure auto-reloading is off, so that `edit --current` does not try
+# to reload the test file
+Pry.config.disable_auto_reload
+
+# Decorate `whereami` command to include test failure information
 Pry.config.commands.before_command("whereami") do
   output.puts
   output.puts "#{Pry::Helpers::Text.bold("Test failure:")} #{message}"
