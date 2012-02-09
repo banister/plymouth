@@ -107,7 +107,7 @@ If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
 Travis Compatibility
 ---
 
-To prevent plymouth messing up travis tests, add the following to your `.travis.yml` file: 
+To prevent plymouth messing up testing on [travis](http://travis-ci.org/), add the following to your `.travis.yml` file: 
 
 ```
 env: USE_PLYMOUTH="no"
