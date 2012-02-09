@@ -5,10 +5,9 @@ require "plymouth/version"
 require 'pry-exception_explorer'
 
 EE.enabled = true
-if ['0', 'false', 'no', 'nil'].include?(ENV['USE_PLYMOUTH'].to_s.downcase)
+if ['0', 'false', 'no'].include?(ENV['USE_PLYMOUTH'].to_s.downcase)
   EE.enabled = false
 end
-
 
 message = nil
 
