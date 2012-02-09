@@ -17,7 +17,7 @@ message = nil
 
 # Ensure auto-reloading is off, so that `edit --current` does not try
 # to reload the test file
-Pry.config.disable_auto_reload
+Pry.config.disable_auto_reload = true
 
 # Decorate `whereami` command to include test failure information
 Pry.config.commands.before_command("whereami") do
