@@ -104,6 +104,15 @@ To make it easier to run your test suite normally (without plymouth's interventi
 can be defined. If the `USE_PLYMOUTH` environment variable is set to `"false"`, `"0"`, or `"no"` plymouth will not intercept test failures.
 If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
 
+Travis Compatibility
+---
+
+To prevent plymouth messing up travis tests, add the following to your `.travis.yml` file: 
+
+```
+env: USE_PLYMOUTH="no"
+```
+
 Limitations
 -------------------------
 
