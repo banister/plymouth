@@ -11,16 +11,13 @@ _Start Pry in the context of a failed test_
 It currently supports [Bacon](https://github.com/chneukirchen/bacon), [Minitest](https://github.com/seattlerb/minitest), and [RSpec](https://github.com/rspec/rspec). 
 Support for other testing libraries is (usually) trivial to add.  
 
-`plymouth` utilizes the powerful [pry-exception_explorer](https://github.com/pry/pry-exception_explorer) gem.
+plymouth utilizes the powerful [pry-exception_explorer](https://github.com/pry/pry-exception_explorer) gem.
 
 plymouth currently only runs on **MRI 1.9.2+ (including 1.9.3)**
-
-* Install the [gem](https://rubygems.org/gems/plymouth): `gem install plymouth`
-* See the [source code](http://github.com/banister/plymouth)
  
 **How to use:**
 
-After installing the gem, simply add the following line to your test suite:
+After installing the [gem](https://rubygems.org/gems/plymouth), simply add the following line to your test suite:
 
 `require 'plymouth'` 
 
@@ -93,7 +90,7 @@ Edit the failing test code in an editor
 ---
 
 Notice the line `edit --current` from the example above. Entering this command will take you to the line in the test file
-where the failing test was defined. Once here you can modify the test code as you please. Note that the test file will not be
+where the failing test was defined. Once here you can modify the test code as you please. Note that the file will not be
 reloaded after editing is complete, instead any modifications you make will only take effect the next time you run the test suite.
 
 
@@ -107,7 +104,7 @@ If `USE_PLYMOUTH` is not defined at all, plymouth will be used by default.
 Travis Compatibility
 ---
 
-To prevent plymouth messing up testing on [travis](http://travis-ci.org/), add the following to your `.travis.yml` file: 
+To prevent plymouth messing up testing on [travis](http://travis-ci.org/), add the following line to your `.travis.yml` file: 
 
 ```
 env: USE_PLYMOUTH="no"
