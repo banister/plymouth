@@ -68,7 +68,9 @@ From: /Users/john/ruby/play/rspec_intercept.rb @ line 9:
 
 [1] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> @array.size                                                                                                                           
 => 1
-[2] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> ^D
+[2] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> edit --current
+=> nil
+[3] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> ^D
 F
 
 Failures:
@@ -86,6 +88,14 @@ Failed examples:
 
 rspec ./rspec_intercept.rb:8 # Array should be empty
 ```
+
+Edit the failing test code in an editor
+---
+
+Notice the line `edit --current` from the example above. Entering this command will take you to the line in the test file
+where the failing test was defined. Once here you can modify the test code as you please. Note that the test file will not be
+reloaded after editing is complete, instead any modifications you make will only take effect the next time you run the test suite.
+
 
 The 'USE_PLYMOUTH' Environment variable
 -------
