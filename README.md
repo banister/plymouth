@@ -116,6 +116,7 @@ Limitations
 * Occasional (very rare) segfault on 1.9.3 (seems to work fine on 1.9.2). Please [report](https://github.com/banister/plymouth/issues) all segfaults with a full backtrace!
 * Only supports MRI.
 * Currently limited to just Bacon, RSpec and Minitest. Support for more testing libraries will be added in the future.
+* Only intercepts test **failures**, does not yet (generally) intercept test **errors**. Support for this will be added soon.
 
 Contact
 -------
