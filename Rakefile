@@ -28,7 +28,7 @@ def apply_spec_defaults(s)
   s.require_path = 'lib'
   s.homepage = "http://github.com/banister/#{PROJECT_NAME}"
   s.has_rdoc = 'yard'
-  s.add_dependency('pry-exception_explorer')
+  s.add_dependency('pry-exception_explorer', '>=0.1.6')
   s.add_development_dependency("bacon","~>1.1.0")
   s.add_development_dependency('rspec')
   s.required_ruby_version = '>= 1.9.2'
