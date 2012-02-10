@@ -66,7 +66,7 @@ From: /Users/john/ruby/play/rspec_intercept.rb @ line 9:
 [1] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> @array.size                                                                                                                           
 => 1
 [2] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> edit --current
-=> nil
+Waiting for Emacs...
 [3] (pry) #<RSpec::Core::ExampleGroup::Nested_1>: 0> ^D
 F
 
