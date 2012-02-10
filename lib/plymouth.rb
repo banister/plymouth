@@ -1,12 +1,28 @@
 # plymouth.rb
 # (C) 2012 John Mair (banisterfiend); MIT license
 
-require "plymouth/version"
 require 'pry-exception_explorer'
+require "plymouth/version"
+require 'plymouth/commands'
 
-EE.enabled = true
-if ['0', 'false', 'no'].include?(ENV['USE_PLYMOUTH'].to_s.downcase)
-  EE.enabled = false
+module Plymouth
+
+  # Enable plymouth.
+  # @return [Boolean]
+  def self.enable!
+    ::EE.enabled = true
+  end
+
+  # Disable plymouth.
+  # @return [Boolean]
+  def self.disable!
+    ::EE.enabled = false
+  end
+
+  # @return [Boolean] Whether Plymouth is enabled.
+  def self.enabled?
+    ::EE.enabled?
+  end
 end
 
 message = nil
@@ -26,7 +42,7 @@ if defined?(Bacon)
   EE.intercept do |frame, ex|
 
     if ex.is_a?(Bacon::Error) && frame.method_name != :run_requirement
-      message = ex
+      message = ex.message
       true
     else
       false
@@ -39,7 +55,7 @@ elsif defined?(RSpec)
   EE.intercept do |frame, ex|
 
     if ex.class.name =~ /RSpec::Expectations::ExpectationNotMetError/
-      message = ex
+      message = ex.message
       true
     else
       false
@@ -54,7 +70,7 @@ elsif defined?(MiniTest)
   EE.intercept do |frame, ex|
 
     if ex.is_a?(MiniTest::Assertion)
-      message = ex
+      message = ex.message
       true
     else
       false
@@ -65,4 +81,11 @@ elsif defined?(MiniTest)
   end
 end
 
+# Disable Plymouth if USE_PLYMOUTH environment variable is falsy
+Plymouth.enable!
+if ['0', 'false', 'no'].include?(ENV['USE_PLYMOUTH'].to_s.downcase)
+  Plymouth.disable!
+end
 
+# Bring in plymouth commands
+Pry.commands.import Plymouth::Commands
