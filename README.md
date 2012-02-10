@@ -93,6 +93,11 @@ Notice the line `edit --current` from the example above. Entering this command w
 where the failing test was defined. Once here you can modify the test code as you please. Note that the file will not be
 reloaded after editing is complete, instead any modifications you make will only take effect the next time you run the test suite.
 
+Turning plymouth off mid-test
+---
+
+If you are inside an interactive session and do not want plymouth to intercept further failing tests you
+can enter the command `plymouth-off`. This will disable plymouth for the remainder of the test suite. 
 
 The 'USE_PLYMOUTH' Environment variable
 -------
@@ -117,6 +122,7 @@ Limitations
 * Only supports MRI.
 * Currently limited to just Bacon, RSpec and Minitest. Support for more testing libraries will be added in the future.
 * Only intercepts test **failures**, does not yet (generally) intercept test **errors**. Support for this will be added soon.
+* Does not work with Bacon's `should.raise` and `should.not.raise` constructions.
 
 Contact
 -------
