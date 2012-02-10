@@ -16,7 +16,7 @@ module Plymouth
 
     create_command "plymouth-on", "Enable Plymouth." do
       banner <<-BANNER
-        Usage: plymouth-off
+        Usage: plymouth-on
         Enable Plymouth.
       BANNER
 
