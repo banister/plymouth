@@ -1,6 +1,7 @@
 # plymouth.rb
 # (C) 2012 John Mair (banisterfiend); MIT license
 
+require 'pry'
 require 'pry-exception_explorer'
 require "plymouth/version"
 require 'plymouth/commands'
